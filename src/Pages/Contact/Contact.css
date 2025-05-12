@@ -1,0 +1,234 @@
+
+
+.contact-section {
+    background: #f8f0f0;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .section-label-green {
+    color: #008000;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+     display: flex;
+     margin-top: -25px;
+    text-transform: uppercase;
+  }
+  
+  .main-title-c {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 10px 0 40px;
+    text-align: center;
+  }
+  
+  .green {
+    color: #008000;
+  }
+  
+  .message-sec {
+    display: flex;
+    background: #e7e7e2;
+    padding: 7px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    gap: 50px;
+    align-items: flex-start;
+    
+    
+    width: 40%;
+
+    
+    margin-right: 30em;
+    margin-bottom: 10em;
+  }
+  
+  .message-form {
+    flex: 1;
+    
+  }
+  
+  .message-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .message-form p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+  }
+  
+  .email-phone {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .email-phone .input-field {
+    flex: 1;
+  }
+  
+  textarea.input-field {
+    resize: none;
+    height: 120px;
+  }
+  
+  .submit-button {
+    background-color: #008000;
+    color: white;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 185px;
+    height: 36px;
+  }
+  
+  .submit-button:hover {
+    background-color: #006400;
+    transform: translateY(-3px);
+
+  }
+
+  .contact-info {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: right;
+    margin-left: 45em;
+    margin-top: -36em;
+    
+  }
+  
+  .contact-info-card {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 8px;
+    gap: 10px;
+    color: black;
+    transition: transform 0.3s ease;
+  }
+  
+  .contact-info-card:hover {
+    transform: translateY(-3px);
+    
+  }
+  
+  .contact-info-icon img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .contact-info-label {
+    font-weight: bold;
+    font-size: 11px;
+    margin-bottom: 2px;
+    color: #006400;
+  }
+  
+  .contact-info-value {
+    font-size: 13px;
+  }
+  .message-sec{
+    flex-direction: column;
+    align-items: left;
+  }
+  @media screen and (max-width:760px){
+    .section-label-green{
+      font-size:14px;
+    }
+    .main-title-c{
+      font-size: 38px;
+    }
+    .message-sec {
+      display: flex;
+      background: #e3eee6;
+      padding: 7px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      gap: 50px;
+      align-items: flex-start;
+      
+      
+      width: 60%;
+  
+      
+      margin-right: 11em;
+      margin-bottom: 10em;
+    }
+    .contact-info {
+    
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: right;
+      margin-left: 20em;
+      margin-top: -36em;
+      
+    }
+    .contact-info-card {
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      padding: 10px;
+      border-radius: 8px;
+      gap: 10px;
+      color: black;
+      transition: transform 0.3s ease;
+    }
+    .contact-info-card {
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      padding: 10px;
+      border-radius: 8px;
+      gap: 10px;
+      color: black;
+      transition: transform 0.3s ease;
+      width: 190px;
+    }
+    
+    .contact-info-icon img {
+      width: 50px;
+      height: 50px;
+    }
+    .input-field {
+      width: 90%;
+      padding: 10px 15px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+    }
+    .contact-section {
+      
+      height:100ch ;
+    }
+    
+  }
+    

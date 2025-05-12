@@ -1,0 +1,35 @@
+.home{
+    height: 100vh;
+    background-color:rgba(154, 188, 231, 1);;
+
+}
+.contact{
+    height: 100vh;
+}
+   
+.about{
+    height: 100vh;
+    background-color: white;
+
+}
+.contact{
+    height: 100vh;
+    background-color: whitesmoke;
+
+}
+.portfolio{
+    height: 100vh;
+    background-color: whitesmoke;
+
+}
+.services{
+    height: 100vh;
+    background-color:white;
+
+}
+.footer{
+    background-color: black;
+    height: 25vh;
+
+}
+

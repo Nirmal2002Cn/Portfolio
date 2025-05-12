@@ -1,0 +1,46 @@
+.about-section{
+    background-color: aliceblue;
+    text-align: center;
+}
+.section-label-green{
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+    letter-spacing: 1px;
+    position: relative;
+    top: 10px;
+    
+
+}
+.green{
+    color: green;;
+}
+.main-title{
+    font-size: 62px;
+    font-weight: extra-bold;
+
+}
+.section-label-green-a{
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+    letter-spacing: 1px;
+    position: relative;
+    top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .main-title{
+        font-size: 38px;
+    }
+    .section-label-green{
+        font-size: 14px;
+    }
+    .section-label-green-a{
+        font-size: 14px;
+    }
+    .about-section{
+        padding: 20px;
+    }
+    
+}
