@@ -1,119 +1,205 @@
-h1{
-    font-size: 30px; 
-    font-weight: bold;
-    padding-top: 0px;
-    margin: 0.2em 0 0.2em 0;
-   
-    
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-    
- 
-.bigT{
-    font-size: 62px;
-    font-weight:extra-bold;
+
+.home-section {
+    width: 100%;
+    min-height: 100vh;
+    /* NEW: Soft Gradient Background instead of plain white */
+    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px;
+    position: relative; /* Needed for background shapes */
+    overflow: hidden; /* Prevents scrollbars if shapes get too big */
+}
+
+/* Optional: Decorative circle in top corner to break the emptiness */
+.home-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: rgba(16, 185, 129, 0.1); /* Very faint green */
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    z-index: 1; /* Keeps content above the background shapes */
+}
+
+/* --- Left Side: Text Styling --- */
+.home-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hello-tag {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #10b981; /* Green text */
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Soft shadow for depth */
+    border: 1px solid #e1e4e8;
+}
+
+.name {
+    font-size: 3.8rem;
     line-height: 1.1;
-    padding-top: 0px;
-    margin: 0 0 0 0;
-  
-    
-   
-}  
+    color: #1f2937; /* Dark Grey (Softer than pure black) */
+    font-weight: 800;
+    margin-bottom: 15px;
+}
 
-.hometext{
-   margin-top: 0px;
-   margin-left: 90px;
-   padding-top: 8.2em;
-    
-   
-    
+.name-highlight {
+    color: #10b981; 
 }
-.para{
-    font-size: 20px;
-    margin-top :40px;
-    margin-left: 90px;
-    
-}
-.para,p{
-    margin: 0.2em 9 0.2em 45px;
-    
 
+.role {
+    font-size: 1.6rem;
+    color: #4b5563;
+    font-weight: 600;
+    margin-bottom: 25px;
 }
-.btn{
-    color: rgba(8, 72, 132, 1);
-    margin-left:90px;
-    
-    width: 158px;
-    height: 45px;
-    text-align: center;
-    border-color: transparent;
-    background: rgba(154, 188, 231, 1);
-    border: 2px solid white;
-    position: relative;
-    top: -23em;
-    
+
+.description {
+    font-size: 1.15rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    max-width: 90%;
 }
-.btn:hover{
-    background: rgba(154, 188, 231, 1);
+
+/* --- Buttons & Socials --- */
+.cta-buttons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.btn-primary {
+    text-decoration: none;
+    background: linear-gradient(90deg, #10b981, #059669); /* Green Gradient Button */
     color: white;
-    border-color: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    padding: 14px 35px;
+    border-radius: 50px; /* Pill shape is more modern */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3); /* Glowing shadow */
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.4);
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #4b5563;
+    font-size: 1.8rem;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.social-links a:hover {
+    color: #10b981;
+    transform: translateY(-3px);
+}
+
+/* --- Right Side: Image with Background Shape --- */
+.home-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative; /* Needed for the shape behind image */
+}
+
+/* The Green Blob behind your photo */
+.home-image::after {
+    content: '';
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: #10b981;
+    border-radius: 50%;
+    z-index: -1; /* Puts it behind the image */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%); /* Adjusts position */
+    opacity: 0.15; /* Makes it a soft ghost shape */
+}
+
+.profile-pic {
+    max-width: 480px;
+    width: 60%;
+    height: auto;
+    /* This drop shadow lifts you off the screen */
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+    /* Masking the bottom for a clean cut look */
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+/* --- Mobile Responsiveness --- */
+@media screen and (max-width: 960px) {
+    .home-section {
+        padding-top: 100px;
+        text-align: center;
+    }
     
-}
-.BGimg{
-    margin-left: 38em;
-    margin-top: 0em;
-    position: relative;
-    top: -18.3em;
-    width: 22%;
-    height: 22%;
- 
-}
-body{
-    margin-top: 0;
-}
-@media (max-width: 768px) {
-    .hometext{
-        margin-left: 12px;
-        padding-top: 5px;
-        margin-top: 7em;
+    .home-container {
+        flex-direction: column-reverse; /* Image Top, Text Bottom */
+        gap: 30px;
     }
-    .para{
-        margin-left: 0px;
-    }
-    .btn{
-        margin-left: 15px;
-        top: 5em;
-    }
-    .BGimg{
-        margin-left: 19em;
-        top: -9.7em;
-        width: 45%;
-        height: 45%;
-    }
-    .para{
-        font-size: 10.7px;
-        margin-top :55px;
-        margin-left: 5px;
-        
-        
-}
 
-    .bigT{
-        font-size: 38px;
-        font-weight:extra-bold;
-        line-height: 1.1;
-        padding-top: 0px;
-        margin: 0 0 0 0;
+    .home-text {
+        align-items: center;
+        max-width: 100%;
     }
-    h1{
-        font-size: 22px; 
-        font-weight: bold;
-        padding-top: 0px;
-        margin: 0.2em 0 0.2em 0;
+
+    .description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+
+    .name {
+        font-size: 2.8rem;
+    }
+
+    .home-image::after {
+        width: 300px;
+        height: 300px; /* Smaller blob on mobile */
+    }
+    
+    .profile-pic {
+        max-width: 320px;
     }
 }
-
-   
-   
-

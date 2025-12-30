@@ -1,70 +1,236 @@
-.title{
-    font-size: 20px;
-    font-weight: bold;
-    color: green;
-    letter-spacing: 1px;
-    position: relative;
-    top: 2em;
-   
-    display: flex;
-    justify-content: center;
-} 
-.main-title-p{
-    font-size: 62px;
-    font-weight: extra-bold;
-    text-align: center;
-    margin-top: 48px;
-    color: #080808;
+/* ===============================
+   VARIABLES
+================================ */
+:root {
+  --primary-green: #10b981;
+  --dark-green: #059669;
+  --light-green: #d1fae5;
+  --pale-green: #ecfdf5;
+  --text-dark: #1f2937;
+  --text-grey: #6b7280;
 }
-.portfolio-grid{
-    display: flex;
-    justify-content:center;
-    flex-wrap: wrap;
-    gap: 3rem;
-    margin-top: 4.2em;
-   
-  
 
+/* ===============================
+   SECTION LAYOUT
+================================ */
+.portfolio-full-section {
+    /* Use a very light grey or white to contrast with Services */
+    background-color: #f9fafb; 
+    padding: 6rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.portfolio-card{
-    background-color: #c6f7d5;
-    padding: 2rem;
-    border-radius: 20px;
-    width: 250px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+
+.portfolio-header {
     text-align: center;
-    transition: transform 0.3s ease;
-    height: 100px;
+    margin-bottom: 4rem;
+    max-width: 800px;
 }
-.portfolio-card:hover{
+
+/* ===============================
+   TYPOGRAPHY (Matched to About/Services)
+================================ */
+/* Pill Label Style */
+.section-label-green {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
+    background: var(--pale-green);
+    padding: 5px 15px;
+    border-radius: 50px;
+}
+
+.main-title-p {
+    font-size: 3rem; /* Adjusted from 62px to match other sections */
+    font-weight: 800;
+    color: var(--text-dark);
+    margin: 10px 0 20px 0;
+    line-height: 1.2;
+}
+
+.green {
+    background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.title-underline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-green), #34d399);
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* ===============================
+   GRID SYSTEM
+================================ */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* ===============================
+   CARD STYLING
+================================ */
+.portfolio-card {
+    background-color: #ffffff; /* Clean White */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #e5e7eb; /* Subtle border */
+    animation: fadeInUp 0.8s ease-out backwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.portfolio-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
+    border-color: var(--primary-green);
 }
-.portfolio-image{
-    width: 100%;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 20px;
-    margin-bottom: 3px;
 
+/* ===============================
+   IMAGE AREA
+================================ */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
 }
-@media screen and (max-width:760px) {
-    .title{
-        font-size: 14px;
-    }
-    .main-title-p{
-        font-size:38px;
-    }
-    .greem{
-        font-size: 38px;
-    }
-    .portfolio-card{
-        background-color: #c6f7d5;
-        padding: 10px;
-        border-radius: 20px;
-        width: 150px;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        transition: transform 0.3s ease;
-        height: 100px;
+
+.portfolio-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
+
+.portfolio-card:hover .portfolio-image {
+    transform: scale(1.05); /* Gentle zoom effect */
+}
+
+/* Badge Styling */
+.category-badge {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: var(--primary-green);
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: 800;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===============================
+   CONTENT AREA
+================================ */
+.card-content {
+    padding: 25px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: var(--text-grey);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.card-buttons {
+    margin-top: auto;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-code {
+    display: flex;
+    align-items: center;
+    background-color: var(--text-dark);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px; /* Rounded pill style */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-code:hover {
+    background-color: #000;
+    transform: translateY(-2px);
+}
+
+.btn-demo {
+    display: flex;
+    align-items: center;
+    background-color: var(--pale-green);
+    color: var(--primary-green);
+    border: 1px solid var(--primary-green);
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-demo:hover {
+    background-color: var(--primary-green);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media screen and (max-width: 760px) {
+    .portfolio-full-section {
+        padding: 4rem 1rem;
+    }
+
+    .main-title-p {
+        font-size: 2.2rem; /* Consistent with mobile headers */
+        margin-top: 10px;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr; 
+        gap: 2rem;
+        width: 100%;
+    }
 }

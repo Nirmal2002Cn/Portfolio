@@ -1,25 +1,46 @@
-import React from 'react';
-import './BackToHome.css'; // You'll need to create this CSS file
+import React, { useState, useEffect } from 'react';
+import './BackToHome.css';
+import { FaHome } from 'react-icons/fa'; // Import the professional icon
 
 function BackToHomeButton() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  // 1. Show button only when user scrolls down
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
+  // 2. Smooth Scroll Function
   const scrollToHome = () => {
-    const homeSection = document.getElementById('home');
-    if (homeSection) {
-      homeSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      // If we're on a different page, navigate to the home page first
-      window.location.href = '/#home';
-    }
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   return (
-    <button 
-      className="back-to-home-btn" 
+    <div 
+      className={`back-to-home-container ${isVisible ? 'visible' : ''}`}
       onClick={scrollToHome}
-      aria-label="Back to home"
     >
-      <i className="home-icon">🏠</i> Home
-    </button>
+        <button 
+          className="back-to-home-btn" 
+          aria-label="Back to home"
+        >
+          <FaHome className="home-icon" /> 
+          <span className="btn-text">Home</span>
+        </button>
+    </div>
   );
 }
 

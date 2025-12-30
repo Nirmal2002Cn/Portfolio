@@ -1,68 +1,353 @@
-.service-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-}
-.section-label-green{
-    font-size: 20px;
-    font-weight: bold;
-    color: green;
-    letter-spacing: 1px;
-    position: relative;
-    top: 10px;
-    
-
-}
-.services-grid{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 8.2em;
-}
-.service-card{
-    background-color: #c6f7d5;
-    padding: 2rem;
-    border-radius: 20px;
-    width: 300px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-.service-card:hover{
-    transform: translateY(-10px);
-}
-.service-icon{
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1rem;
-}
-@media screen and (max-width:760px){
-    .section-label-green{
-        font-size: 14px;
-    }
-    .main-title{
-        font-size: 38px;
-    }
-    .service-card{
-    background-color: #c6f7d5;
-    padding: 1rem;
-    border-radius: 20px;
-    width: 170px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-.services-grid{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 0.2em;
+/* ===============================
+   VARIABLES
+================================ */
+:root {
+  --primary-green: #10b981;
+  --dark-green: #059669;
+  --light-green: #d1fae5;
+  --pale-green: #ecfdf5;
+  --accent-green: #34d399;
+  --shadow-green: rgba(16, 185, 129, 0.2);
+  --text-dark: #1f2937;
+  --text-grey: #6b7280;
 }
 
-    }
-    
+/* ===============================
+   SERVICES SECTION
+================================ */
+.service-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 6rem 2rem; /* Increased padding slightly */
+  position: relative;
+  overflow: hidden;
+  /* Flows nicely from the White About Section */
+  background: linear-gradient(180deg, #ffffff 0%, var(--pale-green) 100%);
+  min-height: 100vh;
+}
 
+/* ===============================
+   BACKGROUND DECORATION (Kept your animation)
+================================ */
+.services-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--light-green), transparent);
+  opacity: 0.4; /* Slightly more visible */
+  animation: float-rotate 25s infinite ease-in-out;
+}
+
+.circle-1 { width: 400px; height: 400px; top: -150px; right: -150px; }
+.circle-2 { width: 300px; height: 300px; bottom: -100px; left: -100px; animation-delay: -8s; }
+.circle-3 { width: 250px; height: 250px; top: 40%; right: 10%; animation-delay: -16s; }
+
+@keyframes float-rotate {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  25% { transform: translate(50px, -50px) rotate(90deg) scale(1.1); }
+  50% { transform: translate(-30px, 30px) rotate(180deg) scale(0.9); }
+  75% { transform: translate(-50px, -30px) rotate(270deg) scale(1.05); }
+}
+
+/* ===============================
+   CONTAINER
+================================ */
+.services-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px; /* Matched About Container width */
+  width: 90%;
+}
+
+/* ===============================
+   SECTION HEADER
+================================ */
+.section-header-services {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-label-green {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  letter-spacing: 2px; /* Matched About section */
+  text-transform: uppercase;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding: 5px 15px; /* Matched About section pill size */
+  background: var(--pale-green);
+  border-radius: 50px;
+}
+
+.label-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--primary-green);
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+.main-title {
+  font-size: 3rem; /* Matched About section (was 3.5rem) */
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 10px 0 20px 0;
+  line-height: 1.2;
+}
+
+.main-title .green {
+  background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+}
+
+.title-underline-services {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+  margin: 0 auto 1.5rem;
+  border-radius: 10px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-grey);
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   SERVICES GRID
+================================ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* ===============================
+   SERVICE CARDS
+================================ */
+.service-card {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Softer shadow */
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e5e7eb; /* Subtle border like About cards */
+  animation: cardSlideUp 0.8s ease-out backwards;
+}
+
+@keyframes cardSlideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card-glow-effect {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.service-card:hover .card-glow-effect {
+  opacity: 1;
+  animation: rotate-glow 6s linear infinite;
+}
+
+@keyframes rotate-glow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(16, 185, 129, 0.2);
+  border-color: var(--primary-green);
+}
+
+/* Top Border Line */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ===============================
+   ICON WRAPPER
+================================ */
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+  transition: all 0.5s ease;
+}
+
+.service-card:hover .icon-wrapper {
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(16, 185, 129, 0.4);
+}
+
+.icon-content {
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.icon-shine {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s;
+}
+
+.service-card:hover .icon-shine {
+  left: 150%;
+}
+
+/* ===============================
+   CARD CONTENT
+================================ */
+.service-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  transition: color 0.3s;
+}
+
+.card-divider {
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+  margin: 0 auto 1rem;
+  border-radius: 10px;
+  transition: width 0.4s;
+}
+
+.service-card:hover .card-divider {
+  width: 60px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-grey);
+}
+
+.card-number {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--pale-green);
+  opacity: 0.6;
+  transition: all 0.4s;
+  z-index: 0;
+}
+
+.service-card:hover .card-number {
+  color: var(--light-green);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ===============================
+   CALL TO ACTION
+================================ */
+.services-cta {
+  margin-top: 5rem;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--pale-green), #ffffff);
+  border-radius: 20px;
+  border: 1px solid var(--light-green);
+  box-shadow: 0 10px 40px rgba(16, 185, 129, 0.1);
+}
+
+.cta-content h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--dark-green);
+  margin-bottom: 0.5rem;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  color: var(--text-grey);
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+@media screen and (max-width: 768px) {
+  .service-section { padding: 4rem 1rem; }
+  
+  .main-title { font-size: 2.2rem; } /* Matched About mobile size */
+  
+  .section-label-green { font-size: 0.8rem; }
+  
+  .services-grid { gap: 1.5rem; }
+  
+  .service-card { padding: 2rem 1.5rem; }
+  
+  .card-number { font-size: 2.5rem; }
+  
+  .cta-content h3 { font-size: 1.5rem; }
+}

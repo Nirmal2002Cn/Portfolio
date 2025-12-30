@@ -1,35 +1,44 @@
-.home{
-    height: 100vh;
-    background-color:rgba(154, 188, 231, 1);;
+/* App.css */
 
-}
-.contact{
+.home {
+    /* Home is fine as 100vh to cover the first screen */
     height: 100vh;
+    background-color: rgba(154, 188, 231, 1);
 }
-   
-.about{
-    height: 100vh;
+
+.about {
+    /* Allows section to grow if text is long */
+    min-height: 100vh;
+    height: auto; 
     background-color: white;
-
+    padding-bottom: 50px; /* Adds space at the bottom */
 }
-.contact{
-    height: 100vh;
+
+.services {
+    min-height: 100vh;
+    height: auto;
+    background-color: white;
+    padding-bottom: 50px;
+}
+
+.portfolio {
+    /* KEY FIX: Allows the 5 projects to fit without overflowing */
+    min-height: 100vh; 
+    height: auto;      
     background-color: whitesmoke;
-
+    padding-bottom: 50px;
 }
-.portfolio{
-    height: 100vh;
+
+.contact {
+    min-height: 100vh;
+    height: auto;
     background-color: whitesmoke;
-
+    padding-bottom: 50px;
 }
-.services{
-    height: 100vh;
-    background-color:white;
 
-}
-.footer{
+.footer {
     background-color: black;
-    height: 25vh;
-
+    height: auto; /* Adapts to footer content */
+    min-height: 25vh;
+    padding: 20px 0;
 }
-

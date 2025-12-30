@@ -1,38 +1,68 @@
-.back-to-home-btn {
+/* Container handles visibility animation */
+.back-to-home-container {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: #4CAF50; /* Green background */
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease-in-out;
+}
+
+/* When visible, slide up and fade in */
+.back-to-home-container.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-home-btn {
+    background: linear-gradient(135deg, #10b981, #059669); /* Your Brand Gradient */
     color: white;
     border: none;
     border-radius: 50px;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Make sure it's above other elements */
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4); /* Green Glow */
     transition: all 0.3s ease;
-  }
-  
-  .back-to-home-btn:hover {
-    background-color: #45a049; /* Darker green on hover */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  }
-  
-  .home-icon {
+}
+
+.back-to-home-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.6);
+    background: linear-gradient(135deg, #059669, #047857);
+}
+
+.home-icon {
     font-size: 18px;
-  }
-  
-  /* For smaller screens */
-  @media (max-width: 768px) {
-    .back-to-home-btn {
-      bottom: 20px;
-      right: 20px;
-      padding: 8px 16px;
-      font-size: 14px;
+}
+
+/* Optional: Hide text on mobile to save space, show only icon */
+@media (max-width: 768px) {
+    .back-to-home-container {
+        bottom: 20px;
+        right: 20px;
     }
-  }
+    
+    .back-to-home-btn {
+        padding: 12px; /* Circle shape on mobile */
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+    }
+
+    .btn-text {
+        display: none; /* Hide text "Home" on small screens */
+    }
+    
+    .home-icon {
+        font-size: 20px;
+    }
+}
