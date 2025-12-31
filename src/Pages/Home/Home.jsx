@@ -28,7 +28,7 @@ function Home() {
            </p>
 
            <div className="cta-buttons">
-             <a href="your-cv-link.pdf" download className="btn-primary">
+             <a href="https://drive.google.com/file/d/17lDzayiyo3ZAbr7VRO--wt0sG8IDyojF/view?usp=sharing" download className="btn-primary">
                Download CV <FaDownload className="btn-icon" />
              </a>
 
