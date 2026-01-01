@@ -1,17 +1,17 @@
-/* App.css */
-
+/* ===============================
+   DESKTOP STYLES (Default)
+================================ */
 .home {
-    /* Home is fine as 100vh to cover the first screen */
-    height: 100vh;
-    background-color: rgba(154, 188, 231, 1);
+    min-height: 100vh;
+    /* Use your updated gradient background here */
+    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
 }
 
 .about {
-    /* Allows section to grow if text is long */
     min-height: 100vh;
     height: auto; 
     background-color: white;
-    padding-bottom: 50px; /* Adds space at the bottom */
+    padding-bottom: 50px;
 }
 
 .services {
@@ -22,7 +22,6 @@
 }
 
 .portfolio {
-    /* KEY FIX: Allows the 5 projects to fit without overflowing */
     min-height: 100vh; 
     height: auto;      
     background-color: whitesmoke;
@@ -38,7 +37,35 @@
 
 .footer {
     background-color: black;
-    height: auto; /* Adapts to footer content */
+    height: auto;
     min-height: 25vh;
     padding: 20px 0;
+}
+
+/* ===============================
+   MOBILE RESPONSIVENESS (The Fix)
+================================ */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Reset height constraints on mobile */
+    .about, .services, .portfolio, .contact {
+        min-height: auto; /* Lets the section shrink to fit content */
+        height: auto;     /* Lets it grow infinitely if content is long */
+        padding-top: 60px; /* Add space at top for the sticky navbar */
+        padding-bottom: 40px;
+    }
+
+    /* 2. Adjust Home section to fit better */
+    .home {
+        min-height: 100vh; /* Home should still cover the full screen */
+        height: auto;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+
+    /* 3. Footer adjustments */
+    .footer {
+        min-height: auto;
+        padding: 40px 0;
+    }
 }
