@@ -5,8 +5,37 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 function Portfolio() {
 
   const projects = [
+    // --- NEW PROJECTS ---
     {
       id: 1,
+      title: "CareLink Health System",
+      category: "ASP.NET Core & Vite",
+      image: "careLink.jpg", 
+      description: "A web platform for community health centers to manage patient records, medicine inventory, and appointments, improving preventive care accessibility.",
+      github: "https://github.com/Nirmal2002Cn/CareLink-Community-Health-System",
+      demo: "#" 
+    },
+    {
+      id: 2,
+      title: "Supply Chain Analytics",
+      category: "Business Intelligence",
+      image: "supply_chain.jpg", 
+      description: "A 'Control Tower' dashboard analyzing global logistics data to identify shipping inefficiencies, cost drivers, and vendor performance in real-time.",
+      github: "https://github.com/Nirmal2002Cn/Global-Supply-Chain-Analytics",
+      demo: "#"
+    },
+    {
+      id: 3,
+      title: "Customer Segmentation",
+      category: "Data Analytics",
+      image: "Dashboard_Screenshot.png", 
+      description: "End-to-end analysis using clustering techniques to segment customers by purchasing behavior, enabling targeted marketing and retention strategies.",
+      github: "https://github.com/Nirmal2002Cn/End-to-End-BI-Customer-Segmentation",
+      demo: "#"
+    },
+    // --- PREVIOUS PROJECTS ---
+    {
+      id: 4,
       title: "OneFold E-Commerce",
       category: "MERN Stack",
       image: "onefold.jpg", 
@@ -15,27 +44,25 @@ function Portfolio() {
       demo: "#" 
     },
     {
-      id: 2,
+      id: 5,
       title: "University Medical Center",
       category: "Web Application",
       image: "medical.jpeg", 
-      // Updated Description: Appointments, Record Safety, Staff Access, Medicine Counting
-      description: "A health center management system where students can book appointments for medical reports. It allows doctors to securely store student records, gives medical staff access privileges, and includes a medicine inventory tracking feature.",
+      description: "A health center management system allowing students to book appointments and doctors to securely store records and track medicine inventory.",
       github: "https://github.com/Nirmal2002Cn/UWU_Medical",
       demo: "#"
     },
     {
-      id: 3,
+      id: 6,
       title: "Edunet Mailing System",
       category: "Internal Communication",
       image: "edunet.png", 
-      // Updated Description: Mailing system, Department selection
-      description: "An internal university mailing system designed for efficient communication. It enables lecturers to easily send targeted emails to specific departments or student groups without manual filtering.",
-      github: "https://github.com/YOUR_USERNAME/edunet",
+      description: "An internal university mailing system enabling lecturers to send targeted emails to specific departments or student groups without manual filtering.",
+      github: "https://github.com/YOUR_USERNAME/edunet", // Note: You might want to update this URL if you have the link now
       demo: "#"
     },
     {
-      id: 4,
+      id: 7,
       title: "Airbnb Data Analysis",
       category: "Tableau & BI",
       image: "airbnb.png", 
@@ -44,7 +71,7 @@ function Portfolio() {
       demo: "#"
     },
     {
-      id: 5,
+      id: 8,
       title: "Bike Sales Dashboard",
       category: "Excel Dashboard",
       image: "bikeSale.jpg", 
@@ -77,6 +104,7 @@ function Portfolio() {
             >
               
               <div className="image-wrapper">
+                 {/* Ensure these images exist in your public/assets folder */}
                  <img src={project.image} alt={project.title} className='portfolio-image' />
                  <span className="category-badge">{project.category}</span>
               </div>
